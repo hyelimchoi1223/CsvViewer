@@ -10,4 +10,4 @@ venv.bak/
 .vscode/
 
 # python
-_pycache_/
+__pycache__/
