@@ -18,7 +18,7 @@ def make_window(csvPath):
     layout = [[gui.Column(input_path_layout)],
           [gui.Column(output_path_layout)],
           [gui.Column(table_layout)]]
-    return gui.Window('Window Title', layout)
+    return gui.Window('Csv Viewer', layout)
 
 
 window = make_window("") 
