@@ -5,7 +5,7 @@ def readCsv(filePath):
     return pd.read_csv(filePath, encoding='euc-kr')
 
 def getHeader(df):
-    return df.columns
+    return df.columns.tolist()
 
 def getValues(df):
-    return df.to_numpy().tolist()
+    return df.values.tolist()
