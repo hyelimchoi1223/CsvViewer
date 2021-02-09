@@ -8,3 +8,6 @@ env.bak/
 venv.bak/
 # Visual Code
 .vscode/
+
+# python
+_pycache_/
