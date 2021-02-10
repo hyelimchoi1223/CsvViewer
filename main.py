@@ -11,7 +11,11 @@ def make_window(csvPath):
         data = readCsv(csvPath)
         header = getHeader(data)
         values = getValues(data)
-  
+        
+      if data.empty == False:
+            is_visible = True
+        
+    
     layout = [[gui.Column(input_path_layout)],
           [gui.Column(output_path_layout)]]
     
