@@ -5,21 +5,21 @@ def make_window(csvPath):
     input_path_layout=[[gui.Text("Insert Your CSV Path")], [gui.Input(key='-INPUT-'), gui.Button('Load', size=(5,1))]]
     output_path_layout = [[gui.Text(size=(100,1), key='-OUTPUT-', text=csvPath, auto_size_text=True)]]
     values = ['No Data']
-    header = ['Error']
+    header = ['Error']    
     is_visible = False
     if csvPath != "":
         data = readCsv(csvPath)
         header = getHeader(data)
         values = getValues(data)
-        
-      if data.empty == False:
+        if data.empty == False :
             is_visible = True
+        
+    
             
-    layout = [[gui.Column(input_path_layout)],
-          [gui.Column(output_path_layout)]]
+    layout = [[gui.Column(input_path_layout)], [gui.Column(output_path_layout)]]
     
     if is_visible :
-        table_layout = [[gui.Table(values, headings=header, visible=is_visible, num_rows=30, auto_size_columns=True, header_background_color='green')]]
+        table_layout = [[gui.Table(values, headings=header, visible=is_visible, num_rows=30, auto_size_columns=True, header_background_color='green', key='-TABLE-')]]
         layout.append([gui.Column(table_layout)])
     
     return gui.Window('Csv Viewer', layout)
@@ -32,7 +32,6 @@ while True:
     if event == gui.WINDOW_CLOSED or event == 'Quit':
         break
     # Output a message to the window
-    if event == 'Load':
-        window.close()
-        window = make_window(values['-INPUT-'])        
+    if event == 'Load':        
+        window = make_window(values['-INPUT-'])                
 window.close()           
